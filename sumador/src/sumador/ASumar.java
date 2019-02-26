@@ -21,11 +21,18 @@ public class ASumar {
 	 */
 	public String mostrar() {
 		String numero = valor_inicial;
-        if (numero.length() == 1 && Integer.parseInt(numero) > 0) {
-            return (numero + " = " + numero);
-        } else if (Integer.parseInt(numero) < 0) {
-        	return ("");
-        }
+		if (numero.length() == 1 && Integer.parseInt(numero) > 0) {
+			return (numero + " = " + numero);
+		} else if (Integer.parseInt(numero) < 0) {
+			return ("");
+		} else {
+			int suma = 0;
+			for (int i = 0; i < valor_inicial.length(); i++) {
+				String digito = Character.toString(valor_inicial.charAt(i));
+				suma = suma + Integer.parseInt(digito);
+			}
+			numero = Integer.toString(suma);
+		}
 		return numero;
 	}
 
